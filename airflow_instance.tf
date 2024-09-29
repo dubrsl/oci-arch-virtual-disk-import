@@ -112,6 +112,7 @@ resource "null_resource" "copy_ansible_playbooks" {
       "sudo update-alternatives  --set python3 /usr/bin/python3.9",
       "sudo update-alternatives  --set python /usr/bin/python3.9",
       "sudo pip3 install ansible docker docker-compose",
+      "sudo /usr/local/bin/ansible-galaxy collection install community.docker -p /usr/local/lib/python3.9/site-packages/ansible_collections --force",
       "unzip -o ansible_playbooks.zip",
       "cd ansible_playbooks && ansible-playbook -i inventory.ini aa_play.yml"
     ]
