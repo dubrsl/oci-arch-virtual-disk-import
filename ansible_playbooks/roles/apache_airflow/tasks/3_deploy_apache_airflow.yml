@@ -17,7 +17,7 @@
     variable_end_string: "!!}"
 
 - name: Fetch Apache Airflow docker-compose file
-  shell: curl https://airflow.apache.org/docs/apache-airflow/2.7.1/docker-compose.yaml --output "{{ ansible_env.HOME }}/apache-airflow/docker-compose.yaml"
+  shell: curl https://airflow.apache.org/docs/apache-airflow/2.10.2/docker-compose.yaml --output "{{ ansible_env.HOME }}/apache-airflow/docker-compose.yaml"
 
 - name: Get ansible user info
   ansible.builtin.getent:
