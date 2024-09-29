@@ -36,12 +36,12 @@
     - { key: "AIRFLOW_UID", value: "{{ ansible_facts.getent_passwd[ansible_user][1] }}" }
 
 - name: Tear down existing services
-  community.docker.docker_compose:
+  community.docker.docker_compose_v2:
     project_src: "{{ ansible_env.HOME  }}/apache-airflow"
     state: absent
 
 - name: Create and start Apache Airflow services using docker compose
-  community.docker.docker_compose:
+  community.docker.docker_compose_v2:
     project_src: "{{ ansible_env.HOME  }}/apache-airflow"
   register: output
 
